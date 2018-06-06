@@ -1,0 +1,20 @@
+tenets:
+  - name: unused-private-vars
+    doc: Finds all unused private vars.
+    bots:
+      codelingo/review:
+        comments: This private var is unused, and can be deleted.
+    query: |
+      import codelingo/ast/php
+
+      php.stmt_class({depth: any}):
+        php.stmt_property:
+          flags: "MODIFIER_PRIVATE (4)"
+          @ review.comment
+          php.stmt_propertyproperty:
+            @ review.vars.x
+            name: $var
+        # TODO: fix failing variable/exclude interaction
+        # exclude:
+        #   php.expr_variable({depth: any}):
+        #     name: $var
