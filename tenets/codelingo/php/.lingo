@@ -7,8 +7,7 @@ tenets:
     query: |
       import codelingo/ast/php
   
-      # Verify that values come directly from a request and are passed into
-      # the model's method
+      # Find variables from http request
       # TODO: verify that this handles a route - route comment has no syntactic element
       php.element({depth: any}):
         php.expr_assign:
@@ -25,130 +24,44 @@ tenets:
           name: $modelMethodName
 
       # Collect argument name
-      php.stmt_classmethod({depth: any}):
-        name: $modelMethodName
-        php.param:
-          name: $argument
-
-        # Trace value of argument through assignment statements
-        php.expr_assign:
-          php.expr_variable:
-            name: $intermediaryVar
-          php.expr_variable({depth: any}):
+      php.stmt_class({depth: any}): # TODO: extends Util\DB\Model (missing AST element)
+        php.stmt_classmethod:
+          name: $modelMethodName
+          php.param:
             name: $argument
 
-        php.expr_assign:
-          php.expr_variable:
-            name: $concattedVar
-          php.expr_variable({depth: any}):
-            name: $intermediaryVar
-
-        # Find concatenation into final variable
-        php.expr_assignop_concat:
-          php.expr_variable:
-            name: $sqlStatement
-            # the request variable may be nested inside further concatenations
+          # Trace value of argument through assignment statements
+          php.expr_assign:
+            php.expr_variable:
+              name: $intermediaryVar
             php.expr_variable({depth: any}):
-              name: $concattedVar
+              name: $argument
 
-          # Names of the methods on the database class
-          # Possible improvements:
-          # - syntactic sugar on repeated patterns
-          # - querying for methods that call the database more explicitly
-          any_of:
-            @ review.comment
-            php.expr_staticcall:
-              php.arg:
-                php.expr_variable:
-                  name: $sqlStatement
-              name: "getDbConnection"
-            @ review.comment
-            php.expr_staticcall:
-              php.arg:
-                php.expr_variable:
-                  name: $sqlStatement
-              name: "executeSql"
-            @ review.comment
-            php.expr_staticcall:
-              php.arg:
-                php.expr_variable:
-                  name: $sqlStatement
-              name: "getRawConnection"
-            @ review.comment
-            php.expr_staticcall:
-              php.arg:
-                php.expr_variable:
-                  name: $sqlStatement
-              name: "is"
-            @ review.comment
-            php.expr_staticcall:
-              php.arg:
-                php.expr_variable:
-                  name: $sqlStatement
-              name: "getAsArray"
-            @ review.comment
-            php.expr_staticcall:
-              php.arg:
-                php.expr_variable:
-                  name: $sqlStatement
-              name: "getRowAsArray"
-            @ review.comment
-            php.expr_staticcall:
-              php.arg:
-                php.expr_variable:
-                  name: $sqlStatement
-              name: "getColumn"
-            @ review.comment
-            php.expr_staticcall:
-              php.arg:
-                php.expr_variable:
-                  name: $sqlStatement
-              name: "getSingleValue"
-            @ review.comment
-            php.expr_staticcall:
-              php.arg:
-                php.expr_variable:
-                  name: $sqlStatement
-              name: "getCursor"
-            @ review.comment
-            php.expr_staticcall:
-              php.arg:
-                php.expr_variable:
-                  name: $sqlStatement
-              name: "beginTransaction"
-            @ review.comment
-            php.expr_staticcall:
-              php.arg:
-                php.expr_variable:
-                  name: $sqlStatement
-              name: "commitTransaction"
-            @ review.comment
-            php.expr_staticcall:
-              php.arg:
-                php.expr_variable:
-                  name: $sqlStatement
-              name: "rollbackTransaction"
-            @ review.comment
-            php.expr_staticcall:
-              php.arg:
-                php.expr_variable:
-                  name: $sqlStatement
-              name: "create"
-            @ review.comment
-            php.expr_staticcall:
-              php.arg:
-                php.expr_variable:
-                  name: $sqlStatement
-              name: "update"
-            @ review.comment
-            php.expr_staticcall:
-              php.arg:
-                php.expr_variable:
-                  name: $sqlStatement
-              name: "getParams"
-            @ review.comment
-            php.expr_staticcall:
-              php.arg:
-                php.expr_variable:
-                  name: $sqlStatement
-              name: "convertField"
+          php.expr_assign:
+            php.expr_variable:
+              name: $concattedVar
+            php.expr_variable({depth: any}):
+              name: $intermediaryVar
+
+          # Find concatenation into final variable
+          php.expr_assignop_concat:
+            php.expr_variable:
+              name: $sqlStatement
+              # the request variable may be nested inside further concatenations
+              php.expr_variable({depth: any}):
+                name: $concattedVar
+
+          # Calls to a method that will call the database
+          @ review.comment
+          php.expr_staticcall:
+            php.arg:
+              php.expr_variable:
+                name: $sqlStatement
+            name: $dbmethod
+
+      php.stmt_namespace:
+        php.name: "Util\DB"
+        php.stmt_class:
+          name: Model
+          php.stmt_classmethod:
+            name: $dbmethod
