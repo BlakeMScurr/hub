@@ -1,9 +1,9 @@
 tenets:
   - bots:
       codelingo/review:
-        comments: Please use `=== null` rather than `is_null`
-    name: null-check
-    doc: Finds all calls to null-check
+        comments: This sql statement may be vulnerable to SQL injection
+    name: sql-injection
+    doc: Finds db calls vulnerable to SQL injection
     query: |
       import codelingo/ast/php
   
