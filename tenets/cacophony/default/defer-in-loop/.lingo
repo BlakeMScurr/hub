@@ -5,7 +5,7 @@ tenets:
 
       Defers are only executed when a function returns. Using them inside loops is often a mistake since they will
       build up and can be executed later than expected. The defers will never get called if the loop does not exit.
-    bots:
+    flows:
       codelingo/review:
         comments: Defer is inside a loop. These will build up and can be executed later than expected.
     query: |

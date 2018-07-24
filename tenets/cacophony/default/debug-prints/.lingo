@@ -5,7 +5,7 @@ tenets:
 
       Debug print calls shouldn't be left in production code.
       They make the program unnecessarily verbose and can output sensitive information.
-    bots:
+    flows:
       codelingo/review:
         comments: Remove debug prints as they make the program unnecessarily verbose and can output sensitive information.
     query: |

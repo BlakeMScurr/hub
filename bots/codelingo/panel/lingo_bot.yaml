@@ -1,4 +1,0 @@
-name: panel
-description: Create a panel to display information from other bots in the codelingo dashboard.
-parameters:
-  name: ""

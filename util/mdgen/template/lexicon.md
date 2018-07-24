@@ -5,13 +5,13 @@
 ##  {{.Name}} facts
 {{range $fact, $children := .Facts}}{{ if ne $fact "not_implemented"}}<details><summary>{{$name}}.{{$fact}}</summary><p>
 
-#### Example of finding every {{$fact}} and having a review bot comment on it:
+#### Example of finding every {{$fact}} and having a review flow comment on it:
 
 ```yaml
 tenets:
   - name: find_all_{{$fact}}
     doc:  Example query to find all instances of {{$fact}}
-    bots:
+    flows:
       codelingo/review
 	       comments: This is a {{$fact}}.
 	   query: |

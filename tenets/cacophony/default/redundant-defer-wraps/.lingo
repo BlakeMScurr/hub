@@ -4,7 +4,7 @@ tenets:
       Finds redundant defer wrapping that could be simplified into a single line.
 
       A single line defer is cleaner and easier to read than one wrapped in a function.
-    bots:
+    flows:
       codelingo/review:
         comments: Redundant defer wrapping. This can be a single line defer instead, eg. defer log.Println("done").
     query: |

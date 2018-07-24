@@ -2,7 +2,7 @@ tenets:
   - name: goto-statement
     doc: |
       Find uses of goto.
-    bots:
+    flows:
       codelingo/review:
         comments: goto statments have a niche use and can obscure the flow of a program.
     query: |

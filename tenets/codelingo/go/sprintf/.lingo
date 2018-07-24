@@ -2,7 +2,7 @@ tenets:
   - name: sprintf-error
     doc: |
       Find instances of 'errors.New(fmt.Sprintf(...))'.
-    bots:
+    flows:
       codelingo/review:
         comments: Should replace errors.New(fmt.Sprintf(...)) with errors.Errorf(...).
     query: |

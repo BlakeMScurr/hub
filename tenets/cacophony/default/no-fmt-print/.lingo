@@ -7,7 +7,7 @@ tenets:
       1. log can be configured to use different writers.
       2. log messages can include additional info; eg. timestamps, source code location.
       3. log messages will never be interleaved.
-    bots:
+    flows:
       codelingo/review:
         comments: |
           Use log.Print* instead. The log package is better suited for logging.

@@ -1,7 +1,7 @@
 tenets:
   - name: freed-new-object
     doc: Finds objects that were created with new and freed.
-    bots:
+    flows:
       codelingo/review:
         comment: This was created with new, and should be deleted not freed.
     query: |
@@ -23,7 +23,7 @@ tenets:
 
   - name: deleted-malloced-objects
     doc: Finds objects that were obtained with malloc and deleted.
-    bots:
+    flows:
       codelingo/review:
         comment: This was obtained with malloc, and should be freed not deleted.
     query: |
@@ -47,7 +47,7 @@ tenets:
 
   - name: used-after-deletion
     doc: Finds objects used after deletion.
-    bots:
+    flows:
       codelingo/review:
         comment: This object has already been deleted.
     query: |
@@ -68,7 +68,7 @@ tenets:
 
   - name: undeleted-returned-object
     doc: Finds objects new that are not deleted.
-    bots:
+    flows:
       codelingo/review:
         comment: This object is neither deleted nor passed to a method that could delete it.
     query: |

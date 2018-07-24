@@ -1,7 +1,7 @@
 tenets:
   - name: fall-through-case
     doc: Finds non-empty cases that fall through.
-    bots:
+    flows:
       codelingo/review:
         comment: Non-empty cases must end with a break, return, or goto.
     query: |

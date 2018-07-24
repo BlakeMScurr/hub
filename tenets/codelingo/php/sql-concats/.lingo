@@ -1,7 +1,7 @@
 tenets:
   - name: sql-concats
     doc: Find all variable name ending in SQL that contain string concatenations.
-    bots:
+    flows:
       codelingo/review:
         comments: SQL query strings shouldnt be concatenated as these are susceptible to SQL injection
     query: |

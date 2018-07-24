@@ -1,7 +1,7 @@
 tenets:
   - name: shadowed-parameter
     doc: Finds parameters that are updated in the method body.
-    bots:
+    flows:
       codelingo/review:
         comment: This assignment may corrupt the parameter. Consider using another variable instead.
     query: |
@@ -18,7 +18,7 @@ tenets:
 
   - name: shadowed-declaration
     doc: Finds declarations that are updated in an inner scope.
-    bots:
+    flows:
       codelingo/review:
         comment: This assignment may corrupt the variable. Consider creating another variable instead.
     query: |

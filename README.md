@@ -6,7 +6,6 @@ The CodeLingo Hub is an Open source collection of CodeLingo Resources.
 * Lexicons - Libraries for DSLs, such as a language AST or VCS. Provides facts for queries.
 * Tenets -  Patterns and anti-patterns in your software stack written in CLQL.
 * Flows - pipelines for process augmentation and automation.
-* Bots - agents that integrate with your services and data stores.
 
 If you are first getting started with CodeLingo please [check out the getting started guide](https://codelingo.io/docs/getting-started).
 
@@ -43,18 +42,9 @@ For more information and about writing your own Tenets, please [see the document
 **[Explore all Tenets](/tenets)**
 
 ## Flows
-Tenets are integrated into your workflow through Flows. Flows are automated and semi-automated processes that rely heavily on bots (integrations) to drive your software development lifecycle. They are completely customizable pipelines and can be configured directly in YAML or via the UI.
+Tenets are integrated into your workflow through Flows. Flows are automated and semi-automated processes that rely heavily on functions to drive your software development lifecycle. They are completely customizable pipelines and can be configured directly in YAML or via the UI.
 
 Currently the default Flow is the review Flow. Custom Flows are currently in development.
-
-## Bots
-Bots are agents that integrate with all your data sources, tools, and services. They can be used to:
-
-* ingest your codebase into a flow
-* make a comment on Github
-* create Slack messages on results
-* integrate with other external services
-
 
 ## Contributing
 

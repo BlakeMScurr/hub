@@ -5,13 +5,13 @@
 ##  git facts
 <details><summary>git.commit</summary><p>
 
-#### Example of finding every commit and having a review bot comment on it:
+#### Example of finding every commit and having a review flow comment on it:
 
 ```yaml
 tenets:
   - name: find_all_commit
     doc:  Example query to find all instances of commit
-    bots:
+    flows:
       codelingo/review
 	       comments: This is a commit.
 	   query: |
@@ -24,13 +24,13 @@ tenets:
 
 <details><summary>git.patch</summary><p>
 
-#### Example of finding every patch and having a review bot comment on it:
+#### Example of finding every patch and having a review flow comment on it:
 
 ```yaml
 tenets:
   - name: find_all_patch
     doc:  Example query to find all instances of patch
-    bots:
+    flows:
       codelingo/review
 	       comments: This is a patch.
 	   query: |
@@ -43,13 +43,13 @@ tenets:
 
 <details><summary>git.repo</summary><p>
 
-#### Example of finding every repo and having a review bot comment on it:
+#### Example of finding every repo and having a review flow comment on it:
 
 ```yaml
 tenets:
   - name: find_all_repo
     doc:  Example query to find all instances of repo
-    bots:
+    flows:
       codelingo/review
 	       comments: This is a repo.
 	   query: |

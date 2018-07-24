@@ -19,7 +19,7 @@ tenets:
               php.stmt_classmethod:
                 @ filter.action
                 name
-    bots:
+    flows:
       codelingo/review:
         comments: |
           Controller class and method name in files named '<controller_category>/<controller_name>/<actionName>.php', should match :

@@ -1,5 +1,5 @@
 tenets:
-  - bots:
+  - flows:
       codelingo/review:
         comments: Please use `=== null` rather than `is_null`
     name: null-check

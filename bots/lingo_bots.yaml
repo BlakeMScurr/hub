@@ -1,4 +1,0 @@
-description: |
-  Bots perform a single task in a flow; for example, parsing CLQL, or commenting on GitHub.
-owners:
-- codelingo
