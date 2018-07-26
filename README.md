@@ -1,62 +1,126 @@
-# CodeLingo Resource Hub
-_Find and Share CodeLingo Resources_
-
-The CodeLingo Hub is an Open source collection of CodeLingo Resources.
-
-* Lexicons - Libraries for DSLs, such as a language AST or VCS. Provides facts for queries.
-* Tenets -  Patterns and anti-patterns in your software stack written in CLQL.
-* Flows - pipelines for process augmentation and automation.
-
-If you are first getting started with CodeLingo please [check out the getting started guide](https://codelingo.io/docs/getting-started).
-
-To use CodeLingo locally, you will need to install the CLI tool which [can be found here](https://github.com/codelingo/lingo)
-
-For any questions please **[join the conversation in Slack](https://join.slack.com/t/codelingo/shared_invite/enQtMzY4MzA5ODYwOTYzLWVhMjI1ODU1YmM3ODAxYWUxNWU5ZTI0NWI0MGVkMmUwZDZhNWYxNGRiNWY4ZDY0NzRkMjU5YTRiYWY2N2FlMmU)**
 
 
-## Lexicons
-Lexicons provide the DSL for querying against a particular domain, specifically programming languages, version control, runtime, and databases.
+<h3 align="center"> codelingo </h3>
 
-Lexicons are imported as part of a CLQL query. Please see the documentation for more information about using Lexicons.
+<p align="center">
+  <b> Automate pull request reviews on GitHub </b>
+</p>
 
-Lexicons are currently available for the follow programming languages:
+<p align="center">
+  <a href="https://github.com/apps/codelingo/installations/new" target="_blank">
+    <img width="295" height="38" src="https://raw.githubusercontent.com/codelingo/codelingo/master/public/img/install.png" />
+  </a>
+</p>
 
-[Go](lexicons/ast/codelingo/go), [Python](lexicons/ast/codelingo/python), [PHP](lexicons/`ast/codelingo/php), [C++](lexicons/ast/codelingo/c++), [C#](lexicons/ast/codelingo/csharp)
+## Overview
 
-If you are interested in writing your own lexicon, please contact us at hello@codelingo.io
+Codelingo is a Platform as a Service (PaaS) that helps software development teams produce better software, faster - together. It treats **your software as data** and **automates your workflows**, called Flows, with the rules and patterns you define, called Tenets.
 
-## Tenets
-Tenets are stored patterns and queries that can be applied to your software stack. All Tenets are constructed in CLQL and rely on specific lexicons.
+Our flagship Flow is the Review Flow, which checks a repository's pull requests conform to its project specific patterns." -> "Our flagship Flow is the Review Flow, which checks if a repository's pull requests conform to project-specific patterns.
 
-Pre-written Tenets found in the Hub can be imported within your lingo file as follows: 
+## Mission
+
+We are building a community to develop and share Tenets and Flows for software development. To this end, Codelingo is **free for open source repos**. Our vision is for Codelingo to be the protocol on top of which the insights and experience of developers across the industry can be shared and applied.
+
+## Quick Starts
+
+### Playground
+
+Write, generate and run Tenets on the [playground](https://codelingo.io/playground).
+
+<!-- TODO image of the playground UI -->
+
+<!-- TODO CLQL tutorial -->
+
+### GitHub Review Flow
+
+1. Install the [Codelingo GitHub App](https://github.com/apps/codelingo).
+
+2. Write the following .lingo.yaml to the root of your repo:
+
+      ```yaml
+      # .lingo.yaml file
+
+      tenets:
+         - import: codelingo/go
+      ```
+
+3. Done! Every pull request will now be checked against the go Tenet bundle we imported above. 
+
+<!-- TODO add screenshot of review comment -->
+
+Other Tenet bundles (including for other languages) from the community can be found under the [tenets directory](https://github.com/codelingo/hub/tree/master/tenets) in this repository.
+
+<!-- TODO add instructions on how to interact with Review Flow with GitHub comments -->
+
+### Local Review Flow
+
+To run the Review Flow against repositories on your local machine:
+
+1. Install the [lingo CLI](https://github.com/codelingo/lingo/releases/latest).
+
+2. Set it up with the following commands:
+
+```bash
+# Run this command from anywhere. Follow the prompts to set up Codelingo on your machine.
+$ lingo config setup
+
+# Run this command inside a git repository to add a default .lingo.yaml file in the current directory.
+$ lingo init
 ```
-tenets:
-  - import codelingo/go/empty-slice
+
+3. Replace the content of the .lingo.yaml file we wrote above with:
+
+
+```yaml
+  tenets:
+    - import: codelingo/go
 ```
 
-All pre-written Tenets are available within this repository, and simply be explored through the file structure. For example, [here is a Tenet for Go](tenets/codelingo/go/goto) that uses of goto
+4. Run the Review Flow:
 
-For more information and about writing your own Tenets, please [see the documentation](https://codelingo.io/docs/concepts/tenets/)
+```bash
+# Run this command from the same directory as the .lingo.yaml file or any of its sub directories.
+$ lingo run review
+```
 
+This will check your source code against the go Tenet bundle we imported above.
 
-**[Explore all Tenets](/tenets)**
+<!-- TODO: screen shot of review result -->
 
-## Flows
-Tenets are integrated into your workflow through Flows. Flows are automated and semi-automated processes that rely heavily on functions to drive your software development lifecycle. They are completely customizable pipelines and can be configured directly in YAML or via the UI.
+## Next Steps
 
-Currently the default Flow is the review Flow. Custom Flows are currently in development.
+See the [getting started guide](https://www.codelingo.io/docs/#getting-started) to learn more about Tenets, Flows and the Codelingo Query Language.
 
-## Contributing
+## Resources
 
-If you have new Tenets or Flows that you would like to contribute to the Hub, please raise a Pull Request directly against the repo.
+### Community
 
-## Other Resources
+<!-- TODO slack numbers -->
 
-* [Roadmap](/company/ROADMAP.md)
-* [Join Slack](https://join.slack.com/t/codelingo/shared_invite/enQtMzY4MzA5ODYwOTYzLWVhMjI1ODU1YmM3ODAxYWUxNWU5ZTI0NWI0MGVkMmUwZDZhNWYxNGRiNWY4ZDY0NzRkMjU5YTRiYWY2N2FlMmU)
-* [Documentation](https://codelingo.io/docs)
-* [IDE Plugins](https://github.com/codelingo/ideplugins)
+ - [slack](https://join.slack.com/t/codelingo/shared_invite/enQtMzY4MzA5ODYwOTYzLWVhMjI1ODU1YmM3ODAxYWUxNWU5ZTI0NWI0MGVkMmUwZDZhNWYxNGRiNWY4ZDY0NzRkMjU5YTRiYWY2N2FlMmU)
+ - [codelingo.io/discuss](http://codelingo.io/discuss)
+ - [hello@codelingo.io](mailto:hello@codelingo.io)
 
+### Learn
 
----
-[hello@codelingo.io](mailto:hello@codelingo.io) | [codelingo.io](https://codelingo.io)
+- [codelingo.io/playground](https://codelingo.io/playground) - Write, automatically generate and run Tenets and Flows online.
+- [codelingo.io/docs](https://codelingo.io/docs) - Learn to write (and automatically generate!) Tenets and compose Flows.
+
+### Repos 
+
+- [github.com/codelingo/lingo](https://github.com/codelingo/lingo) - CLI client for Codelingo.
+- [github.com/codelingo/ideplugins](https://github.com/codelingo/ideplugins) - Run Flows directly in your IDE (Note: WIP).
+
+<!-- TODO: add these
+- [github.com/codelingo/lexiconsdk](https://github.com/codelingo/lexiconsdk) - Add support for new Lexicons
+- [github.com/codelingo/flowsdk](https://github.com/codelingo/flowsdk)
+-->
+
+<!-- TODO: lexiconsdk -->
+
+## About Us
+
+We are a small development team from New Zealand with a passion for the art of software development in itself!
+
+Check out our team page here: <a href="https://www.codelingo.io/team" target="_blank">codelingo.io/team</a>.
