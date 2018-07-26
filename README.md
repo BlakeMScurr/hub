@@ -36,12 +36,12 @@ Test out writing and running a Tenet online with zero installs on the [playgroun
 
 After installing [Codelingo on GitHub](https://github.com/apps/codelingo), write the following .lingo.yaml to the root of your repository:
 
-      ```yaml
-      # .lingo.yaml file
+```yaml
+# .lingo.yaml file
 
-      tenets:
-         - import: codelingo/go
-      ```
+tenets:
+    - import: codelingo/go
+```
 
 Every pull request to your repository will now be checked against the go Tenet bundle we imported above. 
 
