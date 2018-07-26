@@ -1,12 +1,26 @@
+
+
+<h3 align="center"> codelingo </h3>
+
+<p align="center">
+  <b> Automate pull request reviews on GitHub </b>
+</p>
+
+<p align="center">
+  <a href="https://github.com/apps/codelingo/installations/new" target="_blank">
+    <img width="295" height="38" src="https://raw.githubusercontent.com/codelingo/codelingo/master/public/img/install.png" />
+  </a>
+</p>
+
 ## Overview
 
-CodeLingo is a Platform as a Service (PaaS) that helps software development teams produce better software, faster - together. It treats **your software as data** and **automates your workflows**, called Flows, with the rules and patterns you define, called Tenets.
+Codelingo is a Platform as a Service (PaaS) that helps software development teams produce better software, faster - together. It treats **your software as data** and **automates your workflows**, called Flows, with the rules and patterns you define, called Tenets.
 
-Our flagship Flow is the **Review Flow**, which checks a repositoy's pull requests conform to its project specific patterns.
+Our flagship Flow is the Review Flow, which checks a repository's pull requests conform to its project specific patterns." -> "Our flagship Flow is the Review Flow, which checks if a repository's pull requests conform to project-specific patterns.
 
 ## Mission
 
-We are building a community to develop and share Tenets and Flows for software development. To this end, CodeLingo is **free for open source repos**. Our vision is for CodeLingo to be the protocol on top of which the insights and experience of developers across the industry can be shared and applied.
+We are building a community to develop and share Tenets and Flows for software development. To this end, Codelingo is **free for open source repos**. Our vision is for Codelingo to be the protocol on top of which the insights and experience of developers across the industry can be shared and applied.
 
 ## Quick Starts
 
@@ -20,7 +34,7 @@ Write, generate and run Tenets on the [playground](https://codelingo.io/playgrou
 
 ### GitHub Review Flow
 
-1. Install the [CodeLingo GitHub App](link).
+1. Install the [Codelingo GitHub App](https://github.com/apps/codelingo).
 
 2. Write the following .lingo.yaml to the root of your repo:
 
@@ -43,12 +57,12 @@ Other Tenet bundles (including for other languages) from the community can be fo
 
 To run the Review Flow against repositories on your local machine:
 
-1. Install the [lingo CLI](github.com/codelingo/lingo).
+1. Install the [lingo CLI](https://github.com/codelingo/lingo/releases/latest).
 
 2. Set it up with the following commands:
 
 ```bash
-# Run this command from anywhere. Follow the prompts to set up CodeLingo on your machine.
+# Run this command from anywhere. Follow the prompts to set up Codelingo on your machine.
 $ lingo config setup
 
 # Run this command inside a git repository to add a default .lingo.yaml file in the current directory.
@@ -76,7 +90,7 @@ This will check your source code against the go Tenet bundle we imported above.
 
 ## Next Steps
 
-See the [getting started guide](https://codelingo.io/docs/getting-started) to learn more about Tenets, Flows and the CodeLingo Query Language.
+See the [getting started guide](https://www.codelingo.io/docs/#getting-started) to learn more about Tenets, Flows and the Codelingo Query Language.
 
 ## Resources
 
@@ -93,9 +107,9 @@ See the [getting started guide](https://codelingo.io/docs/getting-started) to le
 - [codelingo.io/playground](https://codelingo.io/playground) - Write, automatically generate and run Tenets and Flows online.
 - [codelingo.io/docs](https://codelingo.io/docs) - Learn to write (and automatically generate!) Tenets and compose Flows.
 
-### Repos
+### Repos 
 
-- [github.com/codelingo/lingo](https://github.com/codelingo/lingo) - CLI client for CodeLingo.
+- [github.com/codelingo/lingo](https://github.com/codelingo/lingo) - CLI client for Codelingo.
 - [github.com/codelingo/ideplugins](https://github.com/codelingo/ideplugins) - Run Flows directly in your IDE (Note: WIP).
 
 <!-- TODO: add these
