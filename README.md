@@ -18,15 +18,15 @@ Codelingo is a Platform as a Service (PaaS) that helps software development team
 
 Our flagship Flow is the Review Flow, which checks a repository's pull requests conform to its project specific patterns.
 
-## Mission
+## Vision & Mission
 
-We are building a community to develop and share Tenets and Flows for software development. To this end, Codelingo is **free for open source repos**. Our vision is for Codelingo to be the protocol on top of which the insights and experience of developers across the industry can be shared and applied.
+Our vision is for Codelingo to be the protocol on top of which the insights and experience of developers across the industry can be shared and applied. We are on a mission to build the CodeLingo community: starting with teams solving their own problems, we'll build out Tenets and Flows together.
 
 ## Quick Starts
 
 ### Playground
 
-Write, generate and run Tenets on the [playground](https://codelingo.io/playground).
+Test out writing and running a Tenet online with zero installs on the [playground](https://codelingo.io/playground) - it's easier than you think!
 
 <!-- TODO image of the playground UI -->
 
@@ -34,9 +34,7 @@ Write, generate and run Tenets on the [playground](https://codelingo.io/playgrou
 
 ### GitHub Review Flow
 
-1. Install the [Codelingo GitHub App](https://github.com/apps/codelingo).
-
-2. Write the following .lingo.yaml to the root of your repo:
+After installing [Codelingo on GitHub](https://github.com/apps/codelingo), write the following .lingo.yaml to the root of your repository:
 
       ```yaml
       # .lingo.yaml file
@@ -45,7 +43,7 @@ Write, generate and run Tenets on the [playground](https://codelingo.io/playgrou
          - import: codelingo/go
       ```
 
-3. Done! Every pull request will now be checked against the go Tenet bundle we imported above. 
+Every pull request to your repository will now be checked against the go Tenet bundle we imported above. 
 
 <!-- TODO add screenshot of review comment -->
 
@@ -55,11 +53,7 @@ Other Tenet bundles (including for other languages) from the community can be fo
 
 ### Local Review Flow
 
-To run the Review Flow against repositories on your local machine:
-
-1. Install the [lingo CLI](https://github.com/codelingo/lingo/releases/latest).
-
-2. Set it up with the following commands:
+To run the Review Flow against repositories on your local machine, install the [lingo CLI](https://github.com/codelingo/lingo/releases/latest) and set it up with the following commands:
 
 ```bash
 # Run this command from anywhere. Follow the prompts to set up Codelingo on your machine.
@@ -69,28 +63,25 @@ $ lingo config setup
 $ lingo init
 ```
 
-3. Replace the content of the .lingo.yaml file we wrote above with:
-
+Replace the content of the .lingo.yaml file we wrote above with:
 
 ```yaml
   tenets:
     - import: codelingo/go
 ```
 
-4. Run the Review Flow:
+You can now run the Review Flow to check your source code against the go Tenet bundle we imported above.
 
 ```bash
 # Run this command from the same directory as the .lingo.yaml file or any of its sub directories.
 $ lingo run review
 ```
 
-This will check your source code against the go Tenet bundle we imported above.
-
 <!-- TODO: screen shot of review result -->
 
 ## Next Steps
 
-See the [getting started guide](https://www.codelingo.io/docs/#getting-started) to learn more about Tenets, Flows and the Codelingo Query Language.
+See the [getting started guide](https://www.codelingo.io/docs/#getting-started) to learn more about Tenets, Flows and the Codelingo Query Language (CLQL).
 
 ## Resources
 
