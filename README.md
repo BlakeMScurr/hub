@@ -3,7 +3,7 @@
 <h3 align="center"> codelingo </h3>
 
 <p align="center">
-  <b> Automate pull request reviews on GitHub </b>
+  <b> Automate Your Reviews on GitHub Pull Requests! </b>
 </p>
 
 <p align="center">
