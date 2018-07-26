@@ -20,7 +20,7 @@ Our flagship Flow is the Review Flow, which checks a repository's pull requests 
 
 ## Vision & Mission
 
-Our vision is for Codelingo to be the protocol on top of which the insights and experience of developers across the industry can be shared and applied. We are on a mission to build the CodeLingo community: starting with teams solving their own problems, we'll build out Tenets and Flows together.
+Our vision is for Codelingo to be the protocol on top of which the insights and experience of developers across the industry can be shared and applied. We are on a mission to build the CodeLingo community: starting with teams solving their own problems, we'll build out the rich repository of Tenets and Flows together.
 
 ## Quick Starts
 
