@@ -16,7 +16,7 @@
 
 Codelingo is a Platform as a Service (PaaS) that helps software development teams produce better software, faster - together. It treats **your software as data** and **automates your workflows**, called Flows, with the rules and patterns you define, called Tenets.
 
-Our flagship Flow is the Review Flow, which checks a repository's pull requests conform to its project specific patterns." -> "Our flagship Flow is the Review Flow, which checks if a repository's pull requests conform to project-specific patterns.
+Our flagship Flow is the Review Flow, which checks a repository's pull requests conform to its project specific patterns.
 
 ## Mission
 
